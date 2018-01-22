@@ -4,7 +4,7 @@ export default class About extends Component {
   render() {
     return (
       <div className="About">
-        <h1>About Us</h1>
+        <h4>About Us</h4>
       </div>
     );
   }

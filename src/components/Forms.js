@@ -4,7 +4,7 @@ export default class Forms extends Component {
   render() {
     return (
       <div className="Forms">
-        <h1>Forms</h1>
+        <h4>Forms</h4>
       </div>
     );
   }

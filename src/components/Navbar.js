@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import '../Styling/Navbar.css';
+
 import About from './About';
 import Home from './Home';
 import Programs from './Programs';
@@ -20,8 +22,8 @@ export default class Navbar extends Component {
         <Staff />
         <News />
         <Specials />
-        <Contact />
         <Forms />
+        <Contact />
       </div>
     );
   }
