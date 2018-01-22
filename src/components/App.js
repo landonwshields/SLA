@@ -28,6 +28,21 @@ export default class App extends Component {
     }
   }
 
+  goToHome = (e) => {
+    console.log('success')
+    this.setState({
+      homePage: true,
+      aboutUs: false,
+      programs: false,
+      staff: false,
+      newsEvents: false,
+      specialOffers: false,
+      forms: false,
+      contact: false
+    })
+    e.preventDefault();
+  }
+
   goToAbout = (e) => {
     console.log('success')
     this.setState({
@@ -138,6 +153,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Header
+          goToHome={this.goToHome.bind(this)}
           goToAbout={this.goToAbout.bind(this)}
           goToPrograms={this.goToPrograms.bind(this)}
           goToStaff={this.goToStaff.bind(this)}

@@ -8,7 +8,7 @@ export default class Navbar extends Component {
   render() {
     return (
       <div className="Navbar">
-        <a href='Home'>
+        <a href='Home' onClick={this.props.goToHome}>
           <h4>Home</h4>
         </a>
         <a href='About' onClick={this.props.goToAbout}>

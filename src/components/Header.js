@@ -14,6 +14,7 @@ export default class Header extends Component {
           <h1>Superior Learning Academy</h1>
           <h3>More Than Just A Preschool</h3>
           <Navbar
+            goToHome={this.props.goToHome}
             goToAbout={this.props.goToAbout}
             goToPrograms={this.props.goToPrograms}
             goToStaff={this.props.goToStaff}
