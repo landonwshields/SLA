@@ -8,12 +8,15 @@ import Footer from './Footer';
 export default class App extends Component {
   constructor(){
     super();
-    this.name = "Landon"
+    this.state = {
+      title: "Welcome Landon"
+    }
   }
+
   render() {
     return (
       <div className="App">
-        <Header />
+        <Header title={this.state.title}/>
         <img src={logo} className="App-logo" alt="logo" />
         <Footer />
       </div>
