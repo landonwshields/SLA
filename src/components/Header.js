@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import '../Styling/Header.css';
 import Navbar from './Navbar';
 
 
