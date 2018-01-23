@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import logo from '../SLA_logo.png';
 import '../Styling/Header.css';
 import Navbar from './Navbar';
 
@@ -12,7 +12,8 @@ export default class Header extends Component {
     return (
       <div className="Header">
         <header>
-          <h1>Superior Learning Academy</h1>
+            <h1>Superior Learning Academy</h1>
+            <img src={logo} className="App-logo-top" alt="logo" />
           <h3>More Than Just A Preschool</h3>
           <Navbar
             goToHome={this.props.goToHome}

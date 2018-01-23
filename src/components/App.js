@@ -186,7 +186,7 @@ export default class App extends Component {
         {
           this.state.contact ? <Contact /> : null
         }
-        <img src={logo} className="App-logo" alt="logo" />
+        <img src={logo} className="App-logo-btm" alt="logo" />
         <Footer />
       </div>
     );
