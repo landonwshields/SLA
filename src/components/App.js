@@ -156,7 +156,6 @@ export default class App extends Component {
     this.setState({data: json})
     console.log("this is working");
   }
-// working on cors ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   render() {
     return (
@@ -181,7 +180,7 @@ export default class App extends Component {
           this.state.programs ? <Programs /> : null
         }
         {
-          this.state.staff ? <Staff /> : null
+          this.state.staff ? <Staff data={this.state.data} /> : null
         }
         {
           this.state.newsEvents ? <News /> : null
