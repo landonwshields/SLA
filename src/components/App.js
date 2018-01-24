@@ -24,7 +24,8 @@ export default class App extends Component {
       newsEvents: false,
       specialOffers: false,
       forms: false,
-      contact: false
+      contact: false,
+      data: []
     }
   }
 
@@ -148,6 +149,14 @@ export default class App extends Component {
     e.preventDefault();
   }
 
+//Gets all data from API and sets state to Result
+  async componentDidMount() {
+    const response = await fetch('https://sla-db.herokuapp.com/api/staff', {mode: 'no-cors'})
+    console.log("this is working");
+    const json = await response.json()
+    this.setState({data: json})
+  }
+// working on cors ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
   render() {
     return (
