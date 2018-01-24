@@ -4,7 +4,7 @@ export default class Contact extends Component {
   render() {
     return (
       <div className="Contact">
-        <h4>Contact Us</h4>
+        <h2>Contact Us</h2>
       </div>
     );
   }

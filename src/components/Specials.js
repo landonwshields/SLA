@@ -4,7 +4,7 @@ export default class Specials extends Component {
   render() {
     return (
       <div className="Specials">
-        <h4>Special Offers</h4>
+        <h2>Special Offers</h2>
       </div>
     );
   }
