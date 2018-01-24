@@ -25,12 +25,12 @@ export default class App extends Component {
       specialOffers: false,
       forms: false,
       contact: false,
-      data: []
+      data: [],
     }
   }
 
   goToHome = (e) => {
-    console.log('success')
+    // console.log('success')
     this.setState({
       homePage: true,
       aboutUs: false,
@@ -45,7 +45,7 @@ export default class App extends Component {
   }
 
   goToAbout = (e) => {
-    console.log('success')
+    // console.log('success')
     this.setState({
       homePage: false,
       aboutUs: true,
@@ -60,7 +60,7 @@ export default class App extends Component {
   }
 
   goToPrograms = (e) => {
-    console.log('success')
+    // console.log('success')
     this.setState({
       homePage: false,
       aboutUs: false,
@@ -75,7 +75,7 @@ export default class App extends Component {
   }
 
   goToStaff = (e) => {
-    console.log('success')
+    // console.log('success')
     this.setState({
       homePage: false,
       aboutUs: false,
@@ -90,7 +90,7 @@ export default class App extends Component {
   }
 
   goToNews = (e) => {
-    console.log('success')
+    // console.log('success')
     this.setState({
       homePage: false,
       aboutUs: false,
@@ -105,7 +105,7 @@ export default class App extends Component {
   }
 
   goToSpecials = (e) => {
-    console.log('success')
+    // console.log('success')
     this.setState({
       homePage: false,
       aboutUs: false,
@@ -120,7 +120,7 @@ export default class App extends Component {
   }
 
   goToForms = (e) => {
-    console.log('success')
+    // console.log('success')
     this.setState({
       homePage: false,
       aboutUs: false,
@@ -135,7 +135,7 @@ export default class App extends Component {
   }
 
   goToContact = (e) => {
-    console.log('success')
+    // console.log('success')
     this.setState({
       homePage: false,
       aboutUs: false,
@@ -149,12 +149,12 @@ export default class App extends Component {
     e.preventDefault();
   }
 
-//Gets all data from API and sets state to Result
+//Gets all data from staff API and sets state to Result
   async componentDidMount() {
     const response = await fetch('https://sla-db.herokuapp.com/api/staff')
     const json = await response.json()
     this.setState({data: json})
-    console.log("this is working");
+    console.log("staff api is working");
   }
 
   render() {
