@@ -151,10 +151,10 @@ export default class App extends Component {
 
 //Gets all data from API and sets state to Result
   async componentDidMount() {
-    const response = await fetch('https://sla-db.herokuapp.com/api/staff', {mode: 'no-cors'})
-    console.log("this is working");
+    const response = await fetch('https://sla-db.herokuapp.com/api/staff')
     const json = await response.json()
     this.setState({data: json})
+    console.log("this is working");
   }
 // working on cors ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
