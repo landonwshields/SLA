@@ -13,8 +13,8 @@ export default class Forms extends Component {
       const response = await fetch('https://sla-db.herokuapp.com/api/forms')
       const json = await response.json()
       this.setState({formsData: json})
-      console.log(json);
-     console.log(this.state.formsData[0]);
+      // console.log(json);
+     // console.log(this.state.formsData[0]);
     }
 
   render() {

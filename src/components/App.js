@@ -25,7 +25,7 @@ export default class App extends Component {
       specialOffers: false,
       forms: false,
       contact: false,
-      data: [],
+      staffData: [],
     }
   }
 
@@ -153,8 +153,9 @@ export default class App extends Component {
   async componentDidMount() {
     const response = await fetch('https://sla-db.herokuapp.com/api/staff')
     const json = await response.json()
-    this.setState({data: json})
-    console.log("staff api is working");
+    this.setState({staffData: json})
+    // console.log("staff api is working");
+    // console.log(this.state.staffData);
   }
 
   render() {
@@ -180,7 +181,7 @@ export default class App extends Component {
           this.state.programs ? <Programs /> : null
         }
         {
-          this.state.staff ? <Staff data={this.state.data} /> : null
+          this.state.staff ? <Staff data={this.state.staffData} /> : null
         }
         {
           this.state.newsEvents ? <News /> : null
