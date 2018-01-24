@@ -20,6 +20,9 @@ export default class Navbar extends Component {
         <a href='Staff' onClick={this.props.goToStaff}>
           <h4>Staff</h4>
         </a>
+        <a href='Gallery' onClick={this.props.goToGallery}>
+          <h4>Gallery</h4>
+        </a>
         <a href='News' onClick={this.props.goToNews}>
           <h4>News</h4>
         </a>

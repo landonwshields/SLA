@@ -6,6 +6,7 @@ import Header from './Header';
 import Footer from './Footer';
 import Home from './Home';
 import About from './About';
+import Gallery from './Gallery';
 import Programs from './Programs';
 import Staff from './Staff';
 import News from './News';
@@ -21,6 +22,7 @@ export default class App extends Component {
       aboutUs: false,
       programs: false,
       staff: false,
+      gallery: false,
       newsEvents: false,
       specialOffers: false,
       forms: false,
@@ -67,6 +69,22 @@ export default class App extends Component {
       aboutUs: false,
       programs: true,
       staff: false,
+      newsEvents: false,
+      specialOffers: false,
+      forms: false,
+      contact: false
+    })
+    e.preventDefault();
+  }
+
+  goToGallery = (e) => {
+    // console.log('success')
+    this.setState({
+      homePage: false,
+      aboutUs: false,
+      programs: false,
+      staff: false,
+      gallery: true,
       newsEvents: false,
       specialOffers: false,
       forms: false,
@@ -175,6 +193,7 @@ export default class App extends Component {
           goToAbout={this.goToAbout.bind(this)}
           goToPrograms={this.goToPrograms.bind(this)}
           goToStaff={this.goToStaff.bind(this)}
+          goToGallery={this.goToGallery.bind(this)}
           goToNews={this.goToNews.bind(this)}
           goToSpecials={this.goToSpecials.bind(this)}
           goToForms={this.goToForms.bind(this)}
@@ -194,6 +213,9 @@ export default class App extends Component {
         }
         {
           this.state.newsEvents ? <News /> : null
+        }
+        {
+          this.state.gallery ? <Gallery /> : null
         }
         {
           this.state.specialOffers ? <Specials data={this.state.specialsData} /> : null

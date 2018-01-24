@@ -20,6 +20,7 @@ export default class Header extends Component {
             goToAbout={this.props.goToAbout}
             goToPrograms={this.props.goToPrograms}
             goToStaff={this.props.goToStaff}
+            goToGallery={this.props.goToGallery}
             goToNews={this.props.goToNews}
             goToSpecials={this.props.goToSpecials}
             goToForms={this.props.goToForms}
