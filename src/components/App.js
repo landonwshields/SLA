@@ -30,7 +30,8 @@ export default class App extends Component {
       staffData: [],
       specialsData: [],
       galleryData: [],
-      newsData: []
+      newsData: [],
+      contactData: []
     }
   }
 
@@ -205,6 +206,12 @@ export default class App extends Component {
     this.setState({newsData: newsJSON})
     // console.log("news api is working");
     // console.log(this.state.newsData);
+//Gets all data from Contact API and sets state to Result
+    const contactRes = await fetch('https://sla-db.herokuapp.com/api/contact')
+    const contactJSON = await contactRes.json()
+    this.setState({contactData: contactJSON})
+    console.log("contact api is working");
+    console.log(this.state.contactData);
   }
 
 
@@ -235,7 +242,7 @@ export default class App extends Component {
           this.state.staff ? <Staff data={this.state.staffData} /> : null
         }
         {
-          this.state.newsEvents ? <News data={this.state.newsData}/> : null
+          this.state.newsEvents ? <News data={this.state.newsData} /> : null
         }
         {
           this.state.gallery ? <Gallery data={this.state.galleryData} /> : null
@@ -247,7 +254,7 @@ export default class App extends Component {
           this.state.forms ? <Forms /> : null
         }
         {
-          this.state.contact ? <Contact /> : null
+          this.state.contact ? <Contact data={this.state.contactData} /> : null
         }
         <img src={logo} className="App-logo-btm" alt="logo" />
         <Footer />
