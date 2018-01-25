@@ -33,7 +33,8 @@ export default class App extends Component {
       newsData: [],
       contactData: [],
       programsData: [],
-      aboutData: []
+      aboutData: [],
+      homeData: []
     }
   }
 
@@ -181,13 +182,13 @@ export default class App extends Component {
     e.preventDefault();
   }
 
-//Gets all data from staff API and sets state to Result
   async componentDidMount() {
-    const response = await fetch('https://sla-db.herokuapp.com/api/staff')
-    const json = await response.json()
-    this.setState({staffData: json})
-    // console.log("staff api is working");
-    // console.log(this.state.staffData);
+    //Gets all data from Home API and sets state to Result
+        const homeRes = await fetch('https://sla-db.herokuapp.com/api/home')
+        const homeJSON = await homeRes.json()
+        this.setState({homeData: homeJSON})
+        console.log("home api is working");
+        console.log(this.state.homeData);
   }
 //Gets all data from Specials API and sets state to Result
   async componentWillMount() {
@@ -224,8 +225,14 @@ export default class App extends Component {
     const aboutRes = await fetch('https://sla-db.herokuapp.com/api/about')
     const aboutJSON = await aboutRes.json()
     this.setState({aboutData: aboutJSON})
-    console.log("about api is working");
-    console.log(this.state.aboutData);
+    // console.log("about api is working");
+    // console.log(this.state.aboutData);
+//Gets all data from staff API and sets state to Result
+    const staffRes = await fetch('https://sla-db.herokuapp.com/api/staff')
+    const staffJson = await staffRes.json()
+    this.setState({staffData: staffJson})
+    // console.log("staff api is working");
+    // console.log(this.state.staffData);
   }
 
 
@@ -244,7 +251,7 @@ export default class App extends Component {
           goToContact={this.goToContact.bind(this)}
         />
         {
-          this.state.homePage ? <Home /> : null
+          this.state.homePage ? <Home data={this.state.homeData} /> : null
         }
         {
           this.state.aboutUs ? <About data={this.state.aboutData} /> : null
