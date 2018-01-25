@@ -1,5 +1,9 @@
 .Navbar{
   display: flex;
   justify-content: space-around;
-  background-color: lightblue;
+  background-color: rgb(132, 32, 50);
+}
+.navFont{
+  text-decoration: none;
+  color: white;
 }
