@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export default class Contact extends Component {
   render() {
-    console.log(this.props.data[0]);
+    // console.log(this.props.data[0]);
     return (
       <div className="Contact">
         <h2>Contact Us</h2>

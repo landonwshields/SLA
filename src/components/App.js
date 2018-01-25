@@ -32,7 +32,8 @@ export default class App extends Component {
       galleryData: [],
       newsData: [],
       contactData: [],
-      programsData: []
+      programsData: [],
+      aboutData: []
     }
   }
 
@@ -217,8 +218,14 @@ export default class App extends Component {
     const programsRes = await fetch('https://sla-db.herokuapp.com/api/programs')
     const programsJSON = await programsRes.json()
     this.setState({programsData: programsJSON})
-    console.log("programs api is working");
-    console.log(this.state.programsData);
+    // console.log("programs api is working");
+    // console.log(this.state.programsData);
+//Gets all data from About API and sets state to Result
+    const aboutRes = await fetch('https://sla-db.herokuapp.com/api/about')
+    const aboutJSON = await aboutRes.json()
+    this.setState({aboutData: aboutJSON})
+    console.log("about api is working");
+    console.log(this.state.aboutData);
   }
 
 
@@ -240,7 +247,7 @@ export default class App extends Component {
           this.state.homePage ? <Home /> : null
         }
         {
-          this.state.aboutUs ? <About /> : null
+          this.state.aboutUs ? <About data={this.state.aboutData} /> : null
         }
         {
           this.state.programs ? <Programs data={this.state.programsData} /> : null
