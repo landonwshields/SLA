@@ -28,7 +28,8 @@ export default class App extends Component {
       forms: false,
       contact: false,
       staffData: [],
-      specialsData: []
+      specialsData: [],
+      galleryData: []
     }
   }
 
@@ -187,11 +188,18 @@ export default class App extends Component {
 //Gets all data from Specials API and sets state to Result
   async componentWillMount() {
     const response = await fetch('https://sla-db.herokuapp.com/api/specials')
-    const json = await response.json()
-    this.setState({specialsData: json})
-    console.log("specials api is working");
-    console.log(this.state.specialsData);
+    const specialJSON = await response.json()
+    this.setState({specialsData: specialJSON})
+    // console.log("specials api is working");
+    // console.log(this.state.specialsData);
+//Gets all data from Gallery API and sets state to Result
+    const res = await fetch('https://sla-db.herokuapp.com/api/gallery')
+    const galleryJSON = await res.json()
+    this.setState({galleryData: galleryJSON})
+    // console.log("gallery api is working");
+    // console.log(this.state.galleryData);
   }
+
 
   render() {
     return (
@@ -223,7 +231,7 @@ export default class App extends Component {
           this.state.newsEvents ? <News /> : null
         }
         {
-          this.state.gallery ? <Gallery /> : null
+          this.state.gallery ? <Gallery data={this.state.galleryData} /> : null
         }
         {
           this.state.specialOffers ? <Specials data={this.state.specialsData} /> : null

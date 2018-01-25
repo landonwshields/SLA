@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 export default class Specials extends Component {
   render() {
-    console.log(this.props.data);
     return (
       <div className="Specials">
         <h2>Special Offers</h2>
