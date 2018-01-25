@@ -187,8 +187,8 @@ export default class App extends Component {
         const homeRes = await fetch('https://sla-db.herokuapp.com/api/home')
         const homeJSON = await homeRes.json()
         this.setState({homeData: homeJSON})
-        console.log("home api is working");
-        console.log(this.state.homeData);
+        // console.log("home api is working");
+        // console.log(this.state.homeData);
   }
 //Gets all data from Specials API and sets state to Result
   async componentWillMount() {
@@ -225,8 +225,8 @@ export default class App extends Component {
     const aboutRes = await fetch('https://sla-db.herokuapp.com/api/about')
     const aboutJSON = await aboutRes.json()
     this.setState({aboutData: aboutJSON})
-    // console.log("about api is working");
-    // console.log(this.state.aboutData);
+    console.log("about api is working");
+    console.log(this.state.aboutData);
 //Gets all data from staff API and sets state to Result
     const staffRes = await fetch('https://sla-db.herokuapp.com/api/staff')
     const staffJson = await staffRes.json()
