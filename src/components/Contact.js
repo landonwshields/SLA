@@ -2,14 +2,18 @@ import React, { Component } from 'react';
 
 export default class Contact extends Component {
   render() {
-    // console.log(this.props.data[0]);
+    let contactStuff = this.props.data
     return (
       <div className="Contact">
         <h2>Contact Us</h2>
-        <h3>{this.props.data[0].schoolName}</h3>
-        <h4>{this.props.data[0].schoolAddress}</h4>
-        <h4>{this.props.data[0].schoolEmail}</h4>
-        <h4>{this.props.data[0].schoolPhone}</h4>
+
+        {contactStuff.map(a =>
+          <div key={a.id}>
+            <h3>{a.schoolName}</h3>
+            <h4>{a.schoolAddress}</h4>
+            <h4>{a.schoolEmail}</h4>
+            <h4>{a.schoolPhone}</h4>
+          </div>)}
       </div>
     );
   }
