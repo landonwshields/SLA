@@ -21,21 +21,14 @@ export default class Forms extends Component {
     return (
       <div className="Forms">
         <h2>Forms</h2>
-        <h3>
-          {this.state.formsData.map(a => <a key={a.id} href={a.registrationForm}>Registration Form</a>)}
-        </h3>
-        <h3>
-          {this.state.formsData.map(a => <a key={a.id} href={a.emergencyContactForm}>Emergency Contact Form</a>)}
-        </h3>
-        <h3>
-          {this.state.formsData.map(a => <a key={a.id} href={a.emergencyMedicalConsent}>Emergency Medical Consent Form</a>)}
-        </h3>
-        <h3>
-          {this.state.formsData.map(a => <a key={a.id} href={a.generalHealthForm}>General Health Form</a>)}
-        </h3>
-        <h3>
-          {this.state.formsData.map(a => <a key={a.id} href={a.immunizationForm}>Immunization Form</a>)}
-        </h3>
+        <div>
+          {this.state.formsData.map(a =>
+            <a key={a.id} href={a.schoolForm}>
+              {a.formName}
+              <br></br>
+            </a>)
+          }
+        </div>
       </div>
     );
   }
