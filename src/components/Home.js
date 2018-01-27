@@ -5,13 +5,30 @@ export default class Home extends Component {
     super();
     this.state = {
       updateValue: '',
-      postValue: ''
+      postValue: '',
+      active: false,
+      adminPassword: 'BadAssMom',
+      passwordDisplay: false
     }
 
     this.handlePostChange = this.handlePostChange.bind(this);
     this.handlePostSubmit = this.handlePostSubmit.bind(this);
     this.handleUpdateChange = this.handleUpdateChange.bind(this);
     this.handleUpdateSubmit = this.handleUpdateSubmit.bind(this);
+    this.handleAdminPassword = this.handleAdminPassword.bind(this);
+    this.handleAdmin = this.handleAdmin.bind(this);
+  }
+
+
+
+  handleAdminPassword(event){
+    if (event.target.value === this.state.adminPassword) {
+      this.setState({active: true})
+    }
+  }
+
+  handleAdmin(event){
+    this.setState({passwordDisplay: true})
   }
 
   handlePostChange(event) {
@@ -32,10 +49,8 @@ export default class Home extends Component {
   }
 
   handleUpdateChange(event, id) {
-    var id = event.target.id
     this.setState({
-      updateValue: event.target.value,
-      id: id
+      updateValue: event.target.value
     });
     console.log(id);
   }
@@ -66,21 +81,36 @@ export default class Home extends Component {
         {homeStuff.map(a =>
           <div key={a.id}>
             <p>{a.homeIntro}</p>
-            <form onSubmit={() =>this.handleUpdateSubmit(a.id)} >
-              <textarea rows='7' cols='100' placeholder={a.homeIntro} id={a.id} onChange={this.handleUpdateChange}/>
-              <br></br>
-              <input type="submit" value="Update" />
-            </form>
+            {
+              this.state.active ?
+              <form onSubmit={() =>this.handleUpdateSubmit(a.id)} >
+                <textarea rows='7' cols='100' placeholder={a.homeIntro} id={a.id} onChange={this.handleUpdateChange}/>
+                <br></br>
+                <input type="submit" value="Update" />
+              </form> : null
+            }
           </div>)}
-
-          <form onSubmit={this.handlePostSubmit}>
-            <label>
-              <textarea rows='7' cols='100' onChange={this.handlePostChange} />
-            </label>
-            <br></br>
-            <input type="submit" value="Add New" />
-          </form>
+        <br></br>
+          {
+            this.state.active ?
+            <form onSubmit={this.handlePostSubmit}>
+              <label>
+                <textarea rows='7' cols='100' onChange={this.handlePostChange} />
+              </label>
+              <br></br>
+              <input type="submit" value="Add New" />
+            </form> : null
+          }
           <br></br>
+          <button onClick={this.handleAdmin}>Admin</button>
+          {
+            this.state.passwordDisplay ?
+            <form>
+              <textarea rows='1' cols='15' onChange={this.handleAdminPassword} />
+              <br></br>
+              {/* <input type="submit" value="Admin Password" /> */}
+            </form> : null
+          }
       </div>
     );
   }
