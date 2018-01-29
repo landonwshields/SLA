@@ -2,6 +2,16 @@
   color: rgb(132, 32, 50);
 }
 
+.HeaderDisplay{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Title{
+  padding-right: 20px;
+}
+
 .App-logo-top {
   height: 150px;
 }

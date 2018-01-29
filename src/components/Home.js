@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../Styling/Home.css';
+
 
 export default class Home extends Component {
   constructor(){
@@ -76,10 +78,10 @@ export default class Home extends Component {
   render() {
     let homeStuff = this.props.data
     return (
-      <div className="Home">
+      <div>
         <h2>Home</h2>
         {homeStuff.map(a =>
-          <div key={a.id}>
+          <div className="Home" key={a.id}>
             <p>{a.homeIntro}</p>
             {
               this.state.active ?

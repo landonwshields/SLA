@@ -8,13 +8,17 @@ export default class Header extends Component {
 
 
   render() {
-    // console.log(this.props);
     return (
       <div className="Header">
         <header>
-            <h1>Superior Learning Academy</h1>
+          <div className="HeaderDisplay">
+            <div className="Title">
+              <h1>Superior Learning Academy</h1>
+              <h3>More Than Just A Preschool</h3>
+            </div>
             <img src={logo} className="App-logo-top" alt="logo" />
-          <h3>More Than Just A Preschool</h3>
+          </div>
+
           <Navbar
             goToHome={this.props.goToHome}
             goToAbout={this.props.goToAbout}

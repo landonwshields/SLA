@@ -1,0 +1,6 @@
+.About{
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 17%
+}

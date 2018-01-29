@@ -1,0 +1,7 @@
+.Specials{
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 17%;
+  padding-top: 30px;
+}

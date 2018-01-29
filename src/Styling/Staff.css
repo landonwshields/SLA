@@ -1,0 +1,13 @@
+.Staff{
+  width: 66%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 17%;
+}
+
+.staffImage{
+  width: 300px;
+  display: flex;
+  align-self: center;
+  padding-top: 50px;
+}

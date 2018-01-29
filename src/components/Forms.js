@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import '../Styling/Forms.css';
+
 
 export default class Forms extends Component {
   constructor(){
@@ -19,11 +21,11 @@ export default class Forms extends Component {
 
   render() {
     return (
-      <div className="Forms">
+      <div>
         <h2>Forms</h2>
         <div>
           {this.state.formsData.map(a =>
-            <a key={a.id} href={a.schoolForm}>
+            <a  className="Forms" key={a.id} href={a.schoolForm}>
               {a.formName}
               <br></br>
             </a>)

@@ -1,0 +1,9 @@
+.Gallery{
+  display: inline-grid;
+}
+
+.galleryImage{
+  width: 300px;
+  display: flex;
+  padding: 10px;
+}

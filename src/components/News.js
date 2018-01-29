@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import '../Styling/News.css';
+
 
 export default class News extends Component {
   render() {
     let newsStuff = this.props.data
 
     return (
-      <div className="News">
+      <div>
         <h2>News and Events</h2>
         <br></br>
 
         {newsStuff.map(a =>
-          <div key={a.id}>
+          <div  className="News" key={a.id}>
             <h3>{a.eventTitle}</h3>
             <p>{a.eventDescription}</p>
           </div>)}
