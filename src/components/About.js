@@ -102,9 +102,8 @@ export default class About extends Component {
           {
             this.state.passwordDisplay ?
             <form>
-              <textarea rows='1' cols='15' onChange={this.handleAdminPassword} />
+              <input type="password" onChange={this.handleAdminPassword} />
               <br></br>
-              {/* <input type="submit" value="Admin Password" /> */}
             </form> : null
           }
       </div>
