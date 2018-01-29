@@ -31,6 +31,7 @@ export default class Forms extends Component {
             </a>)
           }
         </div>
+        <div className="Spacing" ></div>
       </div>
     );
   }
