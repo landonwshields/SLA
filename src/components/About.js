@@ -9,7 +9,7 @@ export default class About extends Component {
       updateValue: '',
       postValue: '',
       active: false,
-      adminPassword: 'BadAssMom',
+      adminPassword: 'BadAss1',
       passwordDisplay: false
     }
 
@@ -52,12 +52,9 @@ export default class About extends Component {
     this.setState({
       updateValue: event.target.value
     });
-    console.log(id);
   }
   handleUpdateSubmit(id) {
-    console.log(id)
     var updateValue = this.state.updateValue
-    console.log(updateValue);
     fetch('https://sla-db.herokuapp.com/api/about/' + id, {
       method: 'PUT',
       mode: 'CORS',
@@ -70,8 +67,6 @@ export default class About extends Component {
     })
     alert('Submitted: ' + this.state.updateValue);
   }
-
-
 
 
   render() {
