@@ -122,6 +122,7 @@ export default class Forms extends Component {
           </form> : null
         }
         <br></br>
+        <div className="Spacing" ></div>
         <button onClick={this.handleAdmin}>Admin</button>
         {
           this.state.passwordDisplay ?
@@ -130,7 +131,6 @@ export default class Forms extends Component {
             <br></br>
           </form> : null
         }
-        <div className="Spacing" ></div>
       </div>
     );
   }
